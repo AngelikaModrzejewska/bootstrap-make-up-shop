@@ -58,7 +58,7 @@ module.exports = {
                         options: {
                             name: '[name].[ext]',
                             outputPath: 'img/',
-                            publicPath: '../img/'
+                            publicPath: '../assets/'
                         }
                     }
                 ]
@@ -70,12 +70,12 @@ module.exports = {
         new HtmlWebpackPlugin({ template: './index.html' }),
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'styles/[name].css',
-            chunkFilename: 'styles/chunks/[id].css'
+            filename: 'sass/[name].css',
+            chunkFilename: 'sass/chunks/[id].css'
         }),
         new CopyPlugin({
             patterns: [{
-                from: 'public/img',
+                from: 'public/assets',
                 to: 'img'
             }]
 
